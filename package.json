@@ -12,6 +12,15 @@
     "type": "git",
     "url": "git+https://github.com/gbprod/tree-sitter-gitcommit.git"
   },
+  "files": [
+    "README.md",
+    "grammar.js",
+    "queries/*.scm",
+    "src/*",
+    "src/**",
+    "bindings/node/*",
+    "tree-sitter-gitcommit.wasm"
+  ],
   "keywords": [
     "tree-sitter",
     "parser",
