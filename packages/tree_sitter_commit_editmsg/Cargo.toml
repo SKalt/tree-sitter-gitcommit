@@ -24,3 +24,7 @@ tree-sitter = "~0.20.3"
 
 [build-dependencies]
 cc = "1.0"
+
+[[example]]
+name = "s_exp"
+test = true
