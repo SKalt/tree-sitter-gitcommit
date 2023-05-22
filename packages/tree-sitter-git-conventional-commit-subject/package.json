@@ -5,7 +5,9 @@
   "main": "grammar.js",
   "scripts": {
     "build": "tree-sitter generate",
-    "test": "tree-sitter test"
+    "test": "tree-sitter test",
+    "build-wasm": "tree-sitter build-wasm",
+    "playground": "tree-sitter playground"
   },
   "author": "",
   "license": "ISC",

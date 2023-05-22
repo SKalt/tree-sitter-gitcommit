@@ -1,5 +1,5 @@
 {
-  "name": "gitcommit",
+  "name": "git_conventional_commit_subject",
   "rules": {
     "source": {
       "type": "SEQ",
@@ -39,6 +39,18 @@
         {
           "type": "SYMBOL",
           "name": "message"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "\\r?\\n"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -55,7 +67,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "[^()!:\\r\\n]+"
+          "value": "[^()!:\\r\\n ]+"
         }
       ]
     },
@@ -68,7 +80,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "[^()!:\\r\\n]+"
+          "value": "[^()!:\\r\\n ]+"
         },
         {
           "type": "STRING",
@@ -78,7 +90,7 @@
     },
     "message": {
       "type": "PATTERN",
-      "value": "[^\\r\\n]*"
+      "value": "[^\\r\\n]+"
     }
   },
   "extras": [],

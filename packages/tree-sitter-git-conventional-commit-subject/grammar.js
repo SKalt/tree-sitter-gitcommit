@@ -1,6 +1,6 @@
-const WORD = /[^()!:\r\n]+/;
+const WORD = /[^()!:\r\n ]+/;
 module.exports = grammar({
-  name: 'gitcommit',
+  name: 'git_conventional_commit_subject',
   extras: () => [],
   rules: {
     source: ($) =>
@@ -9,11 +9,12 @@ module.exports = grammar({
         optional($.scope),
         optional('!'),
         ':',
+        ' ',
         $.message,
         optional(/\r?\n/)
       ),
     type: ($) => choice('feat', 'fix', WORD),
     scope: ($) => seq('(', WORD, ')'),
-    message: ($) => /[^\r\n]*/,
+    message: ($) => /[^\r\n]+/,
   },
 });
