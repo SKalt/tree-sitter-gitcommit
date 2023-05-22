@@ -51,8 +51,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "tree-sitter-gitcommit"
-version = "0.3.1"
+name = "tree_sitter_commit_editmsg"
+version = "0.0.1"
+dependencies = [
+ "cc",
+ "tree-sitter",
+]
+
+[[package]]
+name = "tree_sitter_git_conventional_commit_subject"
+version = "0.0.1"
 dependencies = [
  "cc",
  "tree-sitter",
