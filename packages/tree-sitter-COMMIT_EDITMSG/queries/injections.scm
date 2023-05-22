@@ -6,3 +6,6 @@
  (#set! injection.combined)
  (#set! injection.language "git_rebase"))
 
+((subject) @injection.content
+  (#set! injection.combined)
+  (#set! injection.language "conventional-commit-subject"))

@@ -171,25 +171,6 @@
     "fields": {}
   },
   {
-    "type": "prefix",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "scope",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "rebase_command",
     "named": true,
     "fields": {}
@@ -237,21 +218,7 @@
   {
     "type": "subject",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "overflow",
-          "named": true
-        },
-        {
-          "type": "prefix",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "trailer",
@@ -493,10 +460,6 @@
     "named": false
   },
   {
-    "type": "!",
-    "named": false
-  },
-  {
     "type": "\" med ",
     "named": false
   },
@@ -634,18 +597,6 @@
   },
   {
     "type": "'에 맞게 업데이트된 상태입니다.",
-    "named": false
-  },
-  {
-    "type": "(",
-    "named": false
-  },
-  {
-    "type": ")",
-    "named": false
-  },
-  {
-    "type": ":",
     "named": false
   },
   {
@@ -985,10 +936,6 @@
     "named": false
   },
   {
-    "type": "overflow",
-    "named": true
-  },
-  {
     "type": "pick",
     "named": false
   },
@@ -1045,10 +992,6 @@
     "named": true
   },
   {
-    "type": "scope",
-    "named": true
-  },
-  {
     "type": "sedang mendasarkan ulang interaktif; ke ",
     "named": false
   },
@@ -1095,10 +1038,6 @@
   {
     "type": "trwa interaktywne przestawianie na ",
     "named": false
-  },
-  {
-    "type": "type",
-    "named": true
   },
   {
     "type": "tập tin mới:",

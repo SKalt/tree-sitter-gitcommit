@@ -1,6 +1,6 @@
 const NEWLINE = /\r?\n/;
 const ANYTHING = /[^\n\r]+/;
-const SUBJECT = /[^\n\r]{1,49}/;
+const SUBJECT = /[^\n\r]+/;
 const NOT_A_COMMENT = /[^#]/;
 const SCISSORS = /# -+ >8 -+\r?\n/;
 const BRANCH_NAME = /[^\s'”»"“]+/;
@@ -18,9 +18,6 @@ const BREAKING_CHANGE = /BREAKING[- ]CHANGE/;
 module.exports = grammar({
   name: 'gitcommit',
   extras: () => [],
-
-  externals: ($) => [$._conventional_type, $._conventional_subject],
-
   rules: {
     source: ($) =>
       seq(
@@ -31,22 +28,15 @@ module.exports = grammar({
         optional($._scissor)
       ),
 
-    subject: ($) =>
-      seq(
-        choice(
-          seq(NOT_A_COMMENT, SUBJECT),
-          seq($.prefix, $._conventional_subject)
-        ),
-        optional(alias(ANYTHING, $.overflow))
-      ),
+    subject: ($) => seq(seq(NOT_A_COMMENT, SUBJECT)),
 
-    prefix: ($) =>
-      seq(
-        alias($._conventional_type, $.type),
-        optional(seq('(', alias(SCOPE, $.scope), ')')),
-        optional('!'),
-        ':'
-      ),
+    // prefix: ($) =>
+    //   seq(
+    //     alias($._conventional_type, $.type),
+    //     optional(seq('(', alias(SCOPE, $.scope), ')')),
+    //     optional('!'),
+    //     ':'
+    //   ),
 
     _body_line: ($) =>
       choice($._message, $.breaking_change, $.trailer, $.comment, NEWLINE),
