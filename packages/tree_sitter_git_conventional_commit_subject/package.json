@@ -4,10 +4,11 @@
   "description": "a tree-sitter parser for conventional commit subjects",
   "main": "grammar.js",
   "scripts": {
-    "build": "tree-sitter generate",
+    "build": "rm -rf ./src ./bindings && tree-sitter generate",
     "test": "tree-sitter test",
     "build-wasm": "tree-sitter build-wasm",
-    "playground": "tree-sitter playground"
+    "playground": "tree-sitter playground",
+    "cargo-build": "cargo build"
   },
   "author": "",
   "license": "ISC",

@@ -32,6 +32,15 @@
     "test": {
       "inputs": ["{projectRoot}/src/parser.c", "{projectRoot}/corpus/*"],
       "dependsOn": ["build"]
+    },
+    "cargo-build": {
+      "inputs": [
+        "{projectRoot}/bindings/**/*",
+        "{projectRoot}/src/node-types.json",
+        "{projectRoot}/src/parser.c",
+        "{projectRoot}/src/tree_sitter/parser.h"
+      ],
+      "dependsOn": ["^cargo-build", "build"]
     }
   },
   "defaultBase": "main"

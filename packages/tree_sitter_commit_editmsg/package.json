@@ -4,10 +4,11 @@
   "description": "A tree-sitter grammar for git commit messages",
   "main": "bindings/node",
   "scripts": {
-    "build": "tree-sitter generate",
+    "build": "rm -rf ./src ./bindings && tree-sitter generate",
     "test": "tree-sitter test",
-    "build-wasm": "VERBOSE=1 tree-sitter build-wasm",
-    "playground": "tree-sitter playground"
+    "build-wasm": "tree-sitter build-wasm",
+    "playground": "tree-sitter playground",
+    "cargo-build": "cargo build"
   },
   "repository": {
     "type": "git",
