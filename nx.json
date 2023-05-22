@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "build-wasm", "test"]
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["{projectRoot}/src/grammar.js"],
+      "dependsOn": ["^build"],
+      "outputs": [
+        "{projectRoot}/src/tree_sitter/parser.h",
+        "{projectRoot}/src/grammar.json",
+        "{projectRoot}/src/node-types.json",
+        "{projectRoot}/src/parser.c",
+        "{projectRoot}/bindings/**/*"
+      ]
+    },
+    "build-wasm": {
+      "inputs": ["{projectRoot}/src/parser.c"],
+      "dependsOn": ["build"],
+      "outputs": ["{projectRoot}/tree-sitter-*.wasm"]
+    },
+    "playground": {
+      "inputs": ["{projectRoot}/tree-sitter-*.wasm"],
+      "dependsOn": ["build-wasm"]
+    },
+    "test": {
+      "inputs": ["{projectRoot}/src/parser.c", "{projectRoot}/corpus/*"],
+      "dependsOn": ["build"]
+    }
+  },
+  "defaultBase": "main"
+}
