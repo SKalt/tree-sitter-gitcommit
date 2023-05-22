@@ -70,8 +70,7 @@ this is a simple subject with an awesome overflow because it's longer than 50 ch
 --------------------------------------------------------------------------------
 
 (source
-  (subject
-    (overflow)))
+  (subject))
 
 ================================================================================
 Not a comment
@@ -103,11 +102,7 @@ feat(git): allow provided config object to extend other configs
 --------------------------------------------------------------------------------
 
 (source
-  (subject
-    (prefix
-      (type)
-      (scope))
-    (overflow)))
+  (subject))
 
 ================================================================================
 Subject complete
@@ -117,11 +112,7 @@ feat(git)!: allow provided config object to extend other configs
 --------------------------------------------------------------------------------
 
 (source
-  (subject
-    (prefix
-      (type)
-      (scope))
-    (overflow)))
+  (subject))
 
 ================================================================================
 Subject type and BC
@@ -131,10 +122,7 @@ feat!: allow provided config object to extend other configs
 --------------------------------------------------------------------------------
 
 (source
-  (subject
-    (prefix
-      (type))
-    (overflow)))
+  (subject))
 
 ================================================================================
 fix #36
@@ -143,7 +131,5 @@ feat(test):
 --------------------------------------------------------------------------------
 
 (source
-  (ERROR
-    (prefix
-      (type)
-      (scope))))
+  (subject)
+  (MISSING "source_token1"))
